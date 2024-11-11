@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        title: ["Libre Caslon Text", "serif"],
+        custom: ["EB Garamond", "serif"]
+      },
       textColor: {
         skin: {
           base: 'var(--color-text-base)',
