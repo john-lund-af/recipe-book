@@ -6,6 +6,21 @@ export default {
   ],
   theme: {
     extend: {
+      textColor: {
+        skin: {
+          base: 'var(--color-text-base)',
+          secondary: 'var(--color-text-secondary)',
+          inverted: 'var(--color-secondary)'
+        }
+      },
+      backgroundColor: {
+        skin: {
+          fill: 'var(--color-base)',
+          secondary: 'var(--color-secondary)',
+          'button-accent': 'var(--color-accent)',
+          'button-action': 'var(--color-action)'
+        }
+      }
     }
   },
   plugins: [],
