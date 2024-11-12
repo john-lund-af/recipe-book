@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 function RecipeCard({recipe}) {
 
   return (
-    <div className="py-4 max-w-[350px] md:max-w-md rounded-lg shadow-lg">
+    <div className="pb-4 max-w-[350px] md:max-w-md rounded-lg shadow-lg bg-skin-secondary">
       <img className="w-full" src={recipe.image} alt={recipe.name} />
       <div className="px-6 py-4">
         <div className="text-center text-xl mb-2">{recipe.name}</div>

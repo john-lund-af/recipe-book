@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <main>
       <h1>HOME PAGE</h1>
-      <section id="cardList" className="flex flex-row justify-center gap-3 flex-wrap">
+      <section id="cardList" className="flex flex-row justify-center gap-4 flex-wrap">
         {recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}  />)}
       </section>
     </main>
