@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import RecipePage from './pages/RecipePage'
 
 function App() {
 
@@ -6,7 +7,7 @@ function App() {
     <Routes>
       <Route path="/" element={<h1>Start Page</h1>} />
       <Route path="/recipe/new" element={<h1>New Recipe</h1>}/>
-      <Route path="/recipe/:id" element={<h1>Tacos Recipe</h1>} />
+      <Route path="/recipe/:id" element={<RecipePage/>} />
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   )
