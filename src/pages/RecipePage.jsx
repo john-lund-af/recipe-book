@@ -1,16 +1,18 @@
+import {useParams} from 'react-router-dom';
 
 function RecipePage() {
+  const {id} = useParams();
 
   return (
     <main className='flex flex-col'>
       <img src="https://cdn.dummyjson.com/recipe-images/2.webp" alt="img desc" />
       <div id="recipe-content" className='pt-4 px-2 bg-skin-secondary'>
-        <h1 className="text-3xl font-title text-center">Vegetarian Stir-Fry</h1>
+        <h1 id="recipeTitle" className="py-2 text-3xl font-title text-center">Vegetarian Stir-Fry {id}</h1>
         <section className="py-4 text-skin-inverted">
           <ul className='flex flex-row gap-2'>
-            <li className="p-1 bg-skin-fill">Vegetarian</li>
-            <li className="p-1 bg-skin-fill">Stir-fry</li>
-            <li className="p-1 bg-skin-fill">Asian</li>
+            <li className="px-1 bg-skin-fill">Vegetarian</li>
+            <li className="px-1 bg-skin-fill">Stir-fry</li>
+            <li className="px-1 bg-skin-fill">Asian</li>
           </ul>
         </section>
         <section id="recipeInfo">
