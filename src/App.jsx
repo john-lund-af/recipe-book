@@ -8,12 +8,14 @@ function App() {
   return (
     <>
       <Header title="Recipe Book" />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/recipe/new" element={<h1>New Recipe</h1>}/>
-        <Route path="/recipe/:id" element={<RecipePage/>} />
-        <Route path="*" element={<h1>Not Found</h1>} />
-      </Routes>
+        <div className="pt-32">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/recipe/new" element={<h1>New Recipe</h1>}/>
+            <Route path="/recipe/:id" element={<RecipePage/>} />
+            <Route path="*" element={<h1>Not Found</h1>} />
+          </Routes>
+        </div>
     </>
   )
 }
