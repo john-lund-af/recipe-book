@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header title="Recipe Book" />
-        <div className="pt-32">
+        <div className="pt-[96px]">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/recipe/new" element={<h1>New Recipe</h1>}/>
