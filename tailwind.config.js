@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         title: ["Libre Caslon Text", "serif"],
-        custom: ["EB Garamond", "serif"]
+        custom: ["EB Garamond", "serif"],
+        input: ["Roboto", "sans-serif"]
       },
       textColor: {
         skin: {
