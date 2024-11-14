@@ -17,7 +17,7 @@ function HomePage() {
 
   return (
     <main>
-      <section className='fixed w-full flex flex-row justify-center bg-gray-100 py-4' id="filter">
+      <section className='fixed w-full bg-gray-100 py-4' id="filter">
         <RecipeFilters onSearchValue={handleSearchValue} />
       </section>
       <section id="cardList" className="pt-32 flex flex-row justify-center gap-4 flex-wrap">

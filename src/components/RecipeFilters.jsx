@@ -1,24 +1,23 @@
-// import {useState} from 'react';
 import PropTypes from 'prop-types';
+import {useState} from 'react';
+
+const cuisineTypes = ["American","Asian","Brazilian","Greek","Indian","Italian","Japanese","Korean","Lebanese","Mediterranean","Mexican","Moroccan","Pakistani","Russian","Smoothie","Thai","Turkish"];
 
 function RecipeFilters({onSearchValue}) {
-  // const [localSearchValue, setLocalSearchValue] = useState("");
-  const tags = ["Pizza","Italian","Vegetarian","Stir-fry","Asian","Cookies","Dessert","Baking","Pasta","Chicken","Salsa","Salad","Quinoa","Bruschetta","Beef","Caprese","Shrimp","Biryani","Main course","Indian","Pakistani","Karahi","Keema","Potatoes","Kebabs","Saag","Roti","Ramen","Japanese","Soup","Tagine","Chickpea","Moroccan","Bibimbap","Korean","Rice","Moussaka","Greek","Butter chicken","Curry","Thai","Lassi","Mango","Tiramisu","Turkish","Grilling","Smoothie","Blueberry","Banana","Elote","Mexican","Street food","Borscht","Russian","Dosa","Falafel","Lebanese","Wrap","Caipirinha","Brazilian","Cocktail"];
+  const [selectedMealType, setSelectedMealType] = useState("all");
 
   return (
-    <>
-      <div id="searchField" className="flex-1 text-center">
-        <input onChange={(e) => onSearchValue(e.target.value)} className="font-input text-skin-secondary w-3/4 p-2 border border-gray-300 rounded-lg text-lg" type="text" name="filtering" id="filtering" placeholder="Search for title..." />
+    <div className="flex flex-row justify-center font-input">
+      <div className='flex-1 text-center' id="searchField">
+        <input onChange={(e) => onSearchValue(e.target.value)} className="w-full lg:w-2/4 p-2 border border-gray-300 rounded-lg text-lg" type="text" name="filtering" id="filtering" placeholder="Search for title..." />
       </div>
-      <div id="tags">
-        {tags.map(tag => {
-          return (<div key={tag} className="flex items-center mb-4">
-            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded" />
-            <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium text-gray-900">{tag}</label>
-          </div>)
-        })}
+      <div className="flex-1 text-center">
+        <select value={selectedMealType} onChange={(e) => setSelectedMealType(e.target.value)} className="h-12 border border-gray-300 text-gray-600 text-base rounded-lg w-full lg:w-2/4 focus:outline-none">
+          <option selected value="all">Choose a meal type</option>
+          {cuisineTypes.map(ct => <option key={ct} value={ct}>{ct}</option>)}
+        </select>
       </div>
-    </>
+    </div>
   )
 }
 
