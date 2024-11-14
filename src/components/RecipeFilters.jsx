@@ -9,7 +9,6 @@ function RecipeFilters({onFilterChange}) {
 
   useEffect(() => {
     onFilterChange(recipeNameSearch, selectedCuisine);
-    console.log(recipeNameSearch, selectedCuisine);
   }, [recipeNameSearch, selectedCuisine, onFilterChange]);
 
   return (
