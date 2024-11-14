@@ -18,7 +18,7 @@ function RecipeFilters({onFilterChange}) {
       </div>
       <div className="flex-1 text-center">
         <select value={selectedCuisine} onChange={(e) => setSelectedCuisine(e.target.value)} className="h-12 border border-gray-300 text-gray-600 text-base rounded-lg w-full lg:w-2/4 focus:outline-none">
-          <option value="all">Choose a meal type</option>
+          <option value="all">All meal types</option>
           {cuisineTypes.map(ct => <option key={ct} value={ct}>{ct}</option>)}
         </select>
       </div>
