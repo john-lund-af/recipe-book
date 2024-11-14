@@ -1,10 +1,10 @@
 import RecipeCard from '../components/RecipeCard';
-import dummyData from '../assets/data/dummyData.json';
-import {useState} from 'react';
+import RecipeContext from '../context/RecipeContext';
+import {useState, useContext} from 'react';
 import RecipeFilters from '../components/RecipeFilters';
 
 function HomePage() {
-  const [recipes] = useState(dummyData.recipes);
+  const {recipes} = useContext(RecipeContext);
   const [recipeName, setRecipeName] = useState("");
   const [cuisineType, setCuisineType] = useState("all");
 
