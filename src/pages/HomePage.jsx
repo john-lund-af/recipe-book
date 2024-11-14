@@ -13,7 +13,7 @@ function HomePage() {
     setCuisineType(cuisineType)
   }
 
-  let filteredRecipes = cuisineType === 'all' ? [...recipes] : recipes.filter(recipe => recipe.cuisineType.toLowerCase() === cuisineType.toLowerCase());
+  let filteredRecipes = cuisineType === 'all' ? [...recipes] : recipes.filter(recipe => recipe.cuisine.toLowerCase() === cuisineType.toLowerCase());
   filteredRecipes = !recipeName ? [...filteredRecipes] : recipes.filter(recipe => recipe.name.toLocaleLowerCase().includes(recipeName.toLocaleLowerCase()));
 
   return (
