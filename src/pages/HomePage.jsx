@@ -5,20 +5,21 @@ import RecipeFilters from '../components/RecipeFilters';
 
 function HomePage() {
   const [recipes] = useState(dummyData.recipes);
-  const [searchValue, setSearchValue] = useState("");
+  const [recipeName, setRecipeName] = useState("");
+  const [cuisineType, setCuisineType] = useState("all");
 
-  function handleSearchValue(value){
-    setSearchValue(value)
+  function handleFilterChange(recipeName, cuisineType){
+    setRecipeName(recipeName);
+    setCuisineType(cuisineType)
   }
 
-  const filteredRecipes = !searchValue ? [...recipes] : recipes.filter(recipe => {
-    return recipe.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase());
-  });
+  let filteredRecipes = cuisineType === 'all' ? [...recipes] : recipes.filter(recipe => recipe.cuisineType.toLowerCase() === cuisineType.toLowerCase());
+  filteredRecipes = !recipeName ? [...filteredRecipes] : recipes.filter(recipe => recipe.name.toLocaleLowerCase().includes(recipeName.toLocaleLowerCase()));
 
   return (
     <main>
       <section className='fixed w-full bg-gray-100 py-4' id="filter">
-        <RecipeFilters onSearchValue={handleSearchValue} />
+        <RecipeFilters onFilterChange={handleFilterChange} />
       </section>
       <section id="cardList" className="pt-32 flex flex-row justify-center gap-4 flex-wrap">
         {filteredRecipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}  />)}
