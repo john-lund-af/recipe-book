@@ -1,53 +1,22 @@
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
+import {useContext} from 'react';
+import RecipeContext from '../context/RecipeContext';
+import RecipeDetails from '../components/RecipeDetails';
 
 function RecipePage() {
   const {id} = useParams();
+  const {recipes} = useContext(RecipeContext);
+
+  const recipe = recipes.find(recipe => recipe.id?.toString() === id);
+
+  if(!recipe)
+    return <h1 className="text-4xl text-red-700 text-center pt-4">Recipe not found :-(</h1>
+
 
   return (
-    <main className='flex flex-col'>
-      <img src="https://cdn.dummyjson.com/recipe-images/2.webp" alt="img desc" />
-      <div id="recipe-content" className='pt-4 px-2 bg-skin-secondary'>
-        <h1 id="recipeTitle" className="py-2 text-3xl font-title text-center">Vegetarian Stir-Fry {id}</h1>
-        <section className="py-4 text-skin-inverted">
-          <ul className='flex flex-row gap-2'>
-            <li className="px-1 bg-skin-fill">Vegetarian</li>
-            <li className="px-1 bg-skin-fill">Stir-fry</li>
-            <li className="px-1 bg-skin-fill">Asian</li>
-          </ul>
-        </section>
-        <section id="recipeInfo">
-          <div id="prepTimeInMinutes">
-            <span className="font-bold">Preparation time in minutes:</span><span>10 min</span>
-          </div>
-          <div id="cookTimeInMinutes">
-            <span className="font-bold">Cooking time in minutes:</span><span>20 min</span>
-          </div>
-          <div id="servings">
-            <span className="font-bold">Servings:</span><span>3</span>
-          </div>
-          <div id="caloriesPerServing">
-            <span className="font-bold">Calories per serving:</span><span>750 kcal</span>
-          </div>
-        </section>
-        <section id="ingredients" className="py-4">
-          <h5 className="font-bold font-title py-2">Ingredients</h5>
-          <ul>
-            <li>Tofu, cubed</li>
-            <li>Broccoli florets</li>
-            <li>Soy sauce</li>
-            <li>Garlic, minced</li>
-          </ul>
-        </section>
-        <section id="instructions" className="py-4">
-          <h5 className="font-bold font-title py-2">Instructions</h5>
-          <ul>
-            <li>In a wok, heat sesame oil over medium-high heat.</li>
-            <li>Add minced ginger and garlic, sauté until fragrant.</li>
-            <li>Add cubed tofu and stir-fry until golden brown.</li>
-            <li>Add broccoli, carrots, and bell peppers. Cook until vegetables are tender-crisp.</li>
-          </ul>
-        </section>
-      </div>
+    <main>
+      <Link to="/">Home</Link>
+      <RecipeDetails recipe={recipe} />
     </main>
   )
 }
