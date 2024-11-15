@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import Header from './components/Header'
 import RecipeContextProvider from './context/RecipeContextProvider';
 import AboutPage from './pages/AboutPage';
+import CookieNotice from './components/CookieNotice';
 
 function App() {
 
@@ -16,9 +17,10 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/recipe/:id" element={<RecipePage/>} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="*" element={<h1>Not Found</h1>} />
+              <Route path="*" element={<h1 className="text-red-700 text-4xl">Page Not Found</h1>} />
             </Routes>
           </RecipeContextProvider>
+          <CookieNotice />
         </div>
     </>
   )
