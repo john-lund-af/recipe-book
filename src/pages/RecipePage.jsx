@@ -14,7 +14,7 @@ function RecipePage() {
 
 
   return (
-    <main>
+    <main className='md:container md:px-24 mx-auto'>
       <Link to="/">Home</Link>
       <RecipeDetails recipe={recipe} />
     </main>
