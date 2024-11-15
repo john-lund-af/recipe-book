@@ -20,7 +20,7 @@ function RecipeCard({recipe}) {
         <span><strong>Preparation time</strong> {recipe.prepTimeMinutes}</span>
       </div>
       <div className="px-6 py-2 text-center">
-        {recipe.tags.map(tag => <span key={tag} className="inline-block bg-skin-fill px-3 py-1 text-sm text-skin-inverted mr-2 mb-2">#{tag}</span>)}        
+        {recipe.tags.map(tag => <span key={tag} className="inline-block bg-skin-fill px-3 py-1 text-sm text-skin-inverted mr-2 mb-2 shadow-lg">#{tag}</span>)}        
       </div>
     </div>
   )
