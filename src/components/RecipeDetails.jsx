@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 function RecipeDetails({recipe}) {
   return <section className='flex flex-col lg:flex-row gap-4'>
       <div className="md:flex-1">
-        <img src={recipe.image} alt={recipe.name} />
+        <img className="md:rounded-lg md:shadow-lg" src={recipe.image} alt={recipe.name} />
       </div>
-      <div id="recipe-content" className='pt-4 px-2 bg-skin-secondary md:flex-1'>
+      <div id="recipe-content" className='pt-4 px-2 bg-skin-secondary md:flex-1 md:rounded-lg md:shadow-lg'>
         <h1 id="recipeTitle" className="py-2 text-3xl font-title text-center">{recipe.name}</h1>
         <section className="py-4 text-skin-inverted">
           <ul className='flex flex-row gap-2'>

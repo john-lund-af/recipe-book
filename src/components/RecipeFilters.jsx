@@ -12,12 +12,12 @@ function RecipeFilters({onFilterChange}) {
   }, [recipeNameSearch, selectedCuisine, onFilterChange]);
 
   return (
-    <div className="flex flex-row justify-center font-input">
+    <div className="flex flex-row justify-center font-input text-skin-base">
       <div className='flex-1 text-center' id="searchField">
         <input onChange={(e) => setRecipeNameSearch(e.target.value)} className="w-full lg:w-2/4 p-2 border border-gray-300 rounded-lg text-lg" type="text" name="filtering" id="filtering" placeholder="Search for title..." />
       </div>
       <div className="flex-1 text-center">
-        <select value={selectedCuisine} onChange={(e) => setSelectedCuisine(e.target.value)} className="h-12 border border-gray-300 text-gray-600 text-base rounded-lg w-full lg:w-2/4 focus:outline-none">
+        <select value={selectedCuisine} onChange={(e) => setSelectedCuisine(e.target.value)} className="h-12 border border-gray-300 rounded-lg w-full lg:w-2/4 focus:outline-none">
           <option value="all">All meal types</option>
           {cuisineTypes.map(ct => <option key={ct} value={ct}>{ct}</option>)}
         </select>
