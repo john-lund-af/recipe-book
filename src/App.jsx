@@ -13,8 +13,8 @@ function App() {
           <RecipeContextProvider>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/recipe/new" element={<h1>New Recipe</h1>}/>
               <Route path="/recipe/:id" element={<RecipePage/>} />
+              <Route path="/about" element={<h1>About Page</h1>} />
               <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
           </RecipeContextProvider>
