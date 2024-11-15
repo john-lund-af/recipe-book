@@ -82,6 +82,9 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 ## License
 This project is licensed under the MIT License.
 
+## Acknowledgments
+Special thanks to the open-source community for the tools and libraries that make this project possible, and thanks to https://dummyjson.com for the dummydata used in this project.
+
 
 
 
