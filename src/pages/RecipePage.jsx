@@ -1,4 +1,4 @@
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useContext} from 'react';
 import RecipeContext from '../context/RecipeContext';
 import RecipeDetails from '../components/RecipeDetails';
@@ -14,8 +14,7 @@ function RecipePage() {
 
 
   return (
-    <main className='md:container md:px-24 mx-auto'>
-      <Link to="/">Home</Link>
+    <main className='pt-4 md:container md:px-24 mx-auto'>
       <RecipeDetails recipe={recipe} />
     </main>
   )
